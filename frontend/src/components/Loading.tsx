@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react';
 import loadingSvg from '../assets/svg_loading.svg';
 

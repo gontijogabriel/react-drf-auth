@@ -40,22 +40,22 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleRegister} className="p-4 border rounded">
-        <h2 className="text-2xl mb-4">Register</h2>
+    <div className="flex justify-center items-center h-screen mt-[-72px] bg-gray-300">
+      <form onSubmit={handleRegister} className="p-6 bg-white rounded shadow-md w-80">
+        <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">Register</h2>
         {Object.keys(formData).map((key) => (
-          <div className="mb-2" key={key}>
-            <label>{key.charAt(0).toUpperCase() + key.slice(1)}</label>
+          <div className="mb-4" key={key}>
+            <label className="block mb-1 text-gray-600">{key.charAt(0).toUpperCase() + key.slice(1)}</label>
             <input
               type={key === 'password' ? 'password' : 'text'}
               name={key}
               value={(formData as any)[key]}
               onChange={handleChange}
-              className="border p-2 w-full"
+              className="border p-2 w-full rounded"
             />
           </div>
         ))}
-        <button type="submit" className="bg-blue-500 text-white p-2 mt-2">Register</button>
+        <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-600">Register</button>
       </form>
     </div>
   );

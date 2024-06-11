@@ -1,6 +1,7 @@
 // @ts-ignore
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SecuritySVG from '../assets/svg_security.svg';
 
 interface HeaderProps {
   isLoggedIn: boolean;
@@ -22,16 +23,34 @@ function Header({ isLoggedIn, onLogout }: HeaderProps) {
   };
 
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <nav className="flex justify-between">
-        <Link to="/" className="text-lg font-bold">Home</Link>
+    <header className="p-4">
+      <nav className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center">
+          <img src={SecuritySVG} alt="Logo" className="h-10 w-10 mr-2" />
+          <Link to="/" className="text-xl font-bold hover:text-gray-400">Auth React DRF</Link>
+        </div>
         <div>
           {isLoggedIn ? (
-            <button onClick={handleLogout} className="mx-2">Logout</button>
+            <button
+              onClick={handleLogout}
+              className="mx-2 bg-red-600 hover:bg-red-700 text-white py-1 px-4 rounded"
+            >
+              Logout
+            </button>
           ) : (
             <>
-              <Link to="/login" className="mx-2">Login</Link>
-              <Link to="/register" className="mx-2">Register</Link>
+              <Link
+                to="/login"
+                className="mx-2 bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="mx-2 bg-green-600 hover:bg-green-700 text-white py-1 px-4 rounded"
+              >
+                Register
+              </Link>
             </>
           )}
         </div>
@@ -41,3 +60,6 @@ function Header({ isLoggedIn, onLogout }: HeaderProps) {
 }
 
 export default Header;
+
+
+

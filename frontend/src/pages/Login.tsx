@@ -51,29 +51,29 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   if (loading) return <Loading />;
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleLogin} className="p-4 border rounded">
-        <h2 className="text-2xl mb-4">Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
-        <div className="mb-2">
-          <label>Email</label>
+    <div className="flex justify-center items-center h-screen mt-[-72px] bg-gray-300">
+      <form onSubmit={handleLogin} className="p-6 bg-white rounded shadow-md w-80">
+        <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">Login</h2>
+        {error && <p className="text-red-500 mb-4">{error}</p>}
+        <div className="mb-4">
+          <label className="block mb-1 text-gray-600">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border p-2 w-full"
+            className="border p-2 w-full rounded"
           />
         </div>
-        <div className="mb-2">
-          <label>Password</label>
+        <div className="mb-4">
+          <label className="block mb-1 text-gray-600">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border p-2 w-full"
+            className="border p-2 w-full rounded"
           />
         </div>
-        <button type="submit" className="bg-blue-500 text-white p-2 mt-2">Login</button>
+        <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-600">Login</button>
       </form>
     </div>
   );

@@ -45,14 +45,14 @@ const Profile = () => {
   if (!profile) return <div>Error loading profile.</div>;
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="p-4 border rounded">
-        <h2 className="text-2xl mb-4">Profile:</h2>
-        <p><strong>Username:</strong> {profile.username}</p>
-        <p><strong>First Name:</strong> {profile.first_name}</p>
-        <p><strong>Last Name:</strong> {profile.last_name}</p>
-        <p><strong>Email:</strong> {profile.email}</p>
-        <p><strong>CPF:</strong> {profile.cpf}</p>
+    <div className="flex justify-center items-center h-screen mt-[-72px] bg-gray-300">
+      <div className="p-6 bg-white rounded shadow-md w-96">
+        <h2 className="text-3xl font-bold mb-4 text-center text-gray-700">Profile</h2>
+        <p className="mb-2"><strong>Username:</strong> {profile.username}</p>
+        <p className="mb-2"><strong>First Name:</strong> {profile.first_name}</p>
+        <p className="mb-2"><strong>Last Name:</strong> {profile.last_name}</p>
+        <p className="mb-2"><strong>Email:</strong> {profile.email}</p>
+        <p className="mb-2"><strong>CPF:</strong> {profile.cpf}</p>
       </div>
     </div>
   );
